@@ -13,9 +13,9 @@ import org.springframework.cache.annotation.EnableCaching;
  */
 @SpringBootApplication
 @EnableCaching
-public class SpringBootVuejsApplication {
+public class PokeAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootVuejsApplication.class, args);
+		SpringApplication.run(PokeAppApplication.class, args);
 	}
 }

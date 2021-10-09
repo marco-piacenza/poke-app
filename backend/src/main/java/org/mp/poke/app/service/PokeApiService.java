@@ -2,7 +2,7 @@ package org.mp.poke.app.service;
 
 import java.util.Optional;
 
-import org.mp.poke.app.exception.PokeApiException;
+import org.mp.poke.app.exception.ApiException;
 import org.mp.poke.app.exception.PokemonNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,16 +38,16 @@ public class PokeApiService {
 	 * @param pokemonSpecies The pokemon species to search
 	 * @return The first available description for the given pokemon species, if the
 	 *         species exists.
-	 * @throws PokeApiException         If an error occurs invoking PokeApi
+	 * @throws ApiException         If an error occurs invoking PokeApi
 	 * @throws PokemonNotFoundException If the given species does not exists.
 	 */
 	@Cacheable("pokemonSpeciesDescription")
-	public Optional<String> getPokemonDescription(final String pokemonSpecies) throws PokeApiException, PokemonNotFoundException {
+	public Optional<String> getPokemonDescription(final String pokemonSpecies) throws ApiException, PokemonNotFoundException {
 		Optional<String> callPokemonSpeciesApiResponseBody = callPokemonSpeciesApi(pokemonSpecies);
 		if (callPokemonSpeciesApiResponseBody.isPresent()) {
 			return processPokemonSpeciesApiResponseBody(callPokemonSpeciesApiResponseBody.get());
 		} else {
-			throw new PokeApiException("Failure contacting PokeApi");
+			throw new ApiException("Failure contacting PokeApi");
 		}
 	}
 	

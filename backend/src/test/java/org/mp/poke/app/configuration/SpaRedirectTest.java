@@ -7,14 +7,14 @@ import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.mp.poke.app.SpringBootVuejsApplication;
+import org.mp.poke.app.PokeAppApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
 import static org.hamcrest.Matchers.containsString;
 
 @SpringBootTest(
-        classes = SpringBootVuejsApplication.class,
+        classes = PokeAppApplication.class,
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
 class SpaRedirectTest {
@@ -41,7 +41,7 @@ class SpaRedirectTest {
 
     @Test
     void it_should_not_interfere_with_api() {
-        ValidatableResponse response = RestAssured.when().get("/api").then();
+        ValidatableResponse response = RestAssured.when().get("/pokemon").then();
         assertNotSpaResponse(response);
     }
 
@@ -66,6 +66,6 @@ class SpaRedirectTest {
     private void assertNotSpaResponse(ValidatableResponse response) {
         response.statusCode(HttpStatus.SC_NOT_FOUND)
                 .assertThat()
-                .body(containsString("\"status\":404,\"error\":\"Not Found\",\"path\":\"/api\""));
+                .body(containsString("\"status\":404,\"error\":\"Not Found\",\"path\":\"/pokemon\""));
     }
 }

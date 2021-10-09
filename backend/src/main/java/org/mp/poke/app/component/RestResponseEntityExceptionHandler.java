@@ -2,7 +2,7 @@ package org.mp.poke.app.component;
 
 import java.util.Optional;
 
-import org.mp.poke.app.exception.PokeApiException;
+import org.mp.poke.app.exception.ApiException;
 import org.mp.poke.app.exception.PokemonNotFoundException;
 import org.mp.poke.app.model.ErrorResponse;
 import org.springframework.http.HttpHeaders;
@@ -27,9 +27,9 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
 				HttpStatus.NOT_FOUND, request);
 	}
 
-	@ExceptionHandler(value = { PokeApiException.class })
-	protected ResponseEntity<Object> handlePokeApiexception(RuntimeException ex, WebRequest request) {
-		String errorMessage = "PokeApi error";
+	@ExceptionHandler(value = { ApiException.class })
+	protected ResponseEntity<Object> handleApiexception(RuntimeException ex, WebRequest request) {
+		String errorMessage = "Third-party API error";
 		ErrorResponse errorResponse = new ErrorResponse(errorMessage);
 		return handleExceptionInternal(ex, convertIntoJson(errorResponse).orElse(""), createStandardHttpHeader(),
 				HttpStatus.INTERNAL_SERVER_ERROR, request);

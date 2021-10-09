@@ -1,4 +1,4 @@
-package de.jonashackt.springbootvuejs.configuration;
+package org.mp.poke.app.configuration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

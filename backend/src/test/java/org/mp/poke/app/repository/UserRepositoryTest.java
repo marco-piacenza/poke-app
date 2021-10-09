@@ -1,8 +1,9 @@
-package de.jonashackt.springbootvuejs.repository;
+package org.mp.poke.app.repository;
 
-import de.jonashackt.springbootvuejs.domain.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mp.poke.app.domain.User;
+import org.mp.poke.app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;

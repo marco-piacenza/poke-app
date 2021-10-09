@@ -1,4 +1,4 @@
-package de.jonashackt.springbootvuejs.domain;
+package org.mp.poke.app.domain;
 
 import javax.persistence.*;
 

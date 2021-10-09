@@ -1,7 +1,7 @@
-package de.jonashackt.springbootvuejs.repository;
+package org.mp.poke.app.repository;
 
 
-import de.jonashackt.springbootvuejs.domain.User;
+import org.mp.poke.app.domain.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 

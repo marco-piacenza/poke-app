@@ -1,11 +1,12 @@
-package de.jonashackt.springbootvuejs.controller;
+package org.mp.poke.app.controller;
 
-import de.jonashackt.springbootvuejs.SpringBootVuejsApplication;
-import de.jonashackt.springbootvuejs.domain.User;
 import io.restassured.RestAssured;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mp.poke.app.SpringBootVuejsApplication;
+import org.mp.poke.app.controller.BackendController;
+import org.mp.poke.app.domain.User;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 

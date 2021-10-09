@@ -1,6 +1,5 @@
-package de.jonashackt.springbootvuejs.configuration;
+package org.mp.poke.app.configuration;
 
-import de.jonashackt.springbootvuejs.SpringBootVuejsApplication;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
@@ -8,6 +7,7 @@ import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.mp.poke.app.SpringBootVuejsApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 

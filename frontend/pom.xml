@@ -3,19 +3,19 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>frontend</artifactId>
-
+	<!-- ARTIFACT DESCRIPTION -->
 	<parent>
-		<groupId>de.jonashackt</groupId>
-		<artifactId>spring-boot-vuejs</artifactId>
+		<groupId>org.mp</groupId>
+		<artifactId>poke-app</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-
+	<!-- PROPERTIES -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     	<frontend-maven-plugin.version>1.12.0</frontend-maven-plugin.version>
 	</properties>
-
+	<!-- BUILD SETITNGS -->
 	<build>
 		<plugins>
 			<plugin>
@@ -67,19 +67,6 @@
 						<arguments>run test:unit</arguments>
 					</configuration>
 					</execution>
-					<!-- Run End2End tests with Nightwatch -->
-					<!--
-					<execution>
-					<id>npm run test:e2e</id>
-					<goals>
-						<goal>npm</goal>
-					</goals>
-					<phase>test</phase>
-					<configuration>
-					  	<arguments>run test:e2e</arguments>
-					</configuration>
-					</execution>
-					-->
 				</executions>
 			</plugin>
 		</plugins>

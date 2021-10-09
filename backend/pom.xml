@@ -7,8 +7,8 @@
 	<artifactId>backend</artifactId>
 	<packaging>jar</packaging>
 	<parent>
-		<groupId>de.jonashackt</groupId>
-		<artifactId>spring-boot-vuejs</artifactId>
+		<groupId>org.mp</groupId>
+		<artifactId>poke-app</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<!-- PROPERTIES -->

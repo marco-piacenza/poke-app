@@ -2,8 +2,8 @@
   "name": "frontend",
   "version": "4.0.0",
   "private": true,
-  "description": "A Vue.js & Spring Boot example project",
-  "author": "Jonas Hecht <jonas.hecht@codecentric.de>",
+  "description": "Poke-App",
+  "author": "MP",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

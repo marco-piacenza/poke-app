@@ -20,6 +20,7 @@ export default createStore({
         }
     },
     actions: {
+        /*
         login({commit}, {user, password}) {
             return new Promise((resolve, reject) => {
                 console.log("Accessing backend with user: '" + user);
@@ -46,6 +47,7 @@ export default createStore({
                     })
             })
         }
+        */
     },
     getters: {
         isLoggedIn: state => state.loginSuccess,

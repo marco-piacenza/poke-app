@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import Service from '../views/Service.vue'
-import Bootstrap from '../views/Bootstrap.vue'
-import User from '../views/User.vue'
-import Login from '../views/Login.vue'
-import Protected from '../views/Protected.vue'
+//import Bootstrap from '../views/Bootstrap.vue'
+//import User from '../views/User.vue'
+//import Login from '../views/Login.vue'
+//import Protected from '../views/Protected.vue'
 
 import store from '../store'
 
 const routes: Array<RouteRecordRaw> = [
     { path: '/', component: Home },
     { path: '/callservice', component: Service },
-    { path: '/bootstrap', component: Bootstrap },
+/*    { path: '/bootstrap', component: Bootstrap },
     { path: '/user', component: User },
     { path: '/login', component: Login },
     {
@@ -21,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
             requiresAuth: true
         }
     },
-
+*/
     // otherwise redirect to home
     { path: '/:pathMatch(.*)*', redirect: '/' }
 ]

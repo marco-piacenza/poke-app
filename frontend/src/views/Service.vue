@@ -1,12 +1,12 @@
 <template>
   <div class="service">
     <h1>{{ msg }}</h1>
-    <h2>REST service call results</h2>
-
-    <button @click="callHelloApi()">CALL Spring Boot REST backend service</button>
-
+    <form @submit.prevent="submitForm">
+      <input v-model="pokemonSpecies" placeholder="edit me" type="text">
+      <!--button @click="callApi({ pokemonSpecies })">CALL API</button-->
+      <button>CALL API</button>
+    </form>
     <h4>Backend response: {{ backendResponse }}</h4>
-
   </div>
 </template>
 
@@ -18,6 +18,7 @@ import {AxiosError} from "axios";
 interface State {
   msg: string;
   backendResponse: string;
+  pokemonSpecies: string,
   errors: AxiosError[]
 }
 
@@ -26,17 +27,22 @@ export default defineComponent({
 
   data: (): State => {
     return {
-      msg: 'HowTo call REST-Services:',
+      msg: 'Search a Pokemon species:',
       backendResponse: '',
+      pokemonSpecies: '',
       errors: []
     }
   },
   methods: {
     // Fetches posts when the component is created.
-    callHelloApi () {
-      api.hello().then(response => {
-          this.backendResponse = response.data;
+    submitForm () {
+      api.getPokemonSpeciesDescription(this.pokemonSpecies).then(response => {
           console.log(response.data)
+          if (response.data.errorMessage != null) {
+            this.backendResponse = response.data.errorMessage;
+          } else {
+            this.backendResponse = response.data.description;
+          }
       })
       .catch((error: AxiosError) => {
         this.errors.push(error)

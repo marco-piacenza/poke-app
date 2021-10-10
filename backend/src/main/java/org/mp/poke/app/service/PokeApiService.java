@@ -110,7 +110,9 @@ public class PokeApiService {
 			if (responseAsJson.has("flavor_text_entries")) {
 				ArrayNode arrayNode = (ArrayNode) responseAsJson.get("flavor_text_entries");
 				if (arrayNode.size() > 0) {
-					pokemonSpeciesDescription = arrayNode.get(0).get("flavor_text").asText();
+					String tmp = 
+							arrayNode.get(0).get("flavor_text").asText();
+					pokemonSpeciesDescription = tmp.replace("\n", " ").replace("\f", " ");
 				}
 			}
 		}

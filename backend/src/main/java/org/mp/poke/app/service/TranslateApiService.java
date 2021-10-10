@@ -97,7 +97,8 @@ public class TranslateApiService {
 			if (responseAsJson.has("contents")) {
 				JsonNode contentsNode = responseAsJson.get("contents");
 				if (contentsNode.has("translated")) {
-					translatedText = contentsNode.get("translated").asText();
+					String tmp = contentsNode.get("translated").asText();
+					translatedText = tmp.replace("\n", " ").replace("\f", " ").replace("%20", " ");
 				}
 			}
 		}
